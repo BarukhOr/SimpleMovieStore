@@ -1,0 +1,33 @@
+﻿@model SimpleMovieStore.ViewModels.ViewMoviesViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Movies</h1>
+
+<div class="container">
+    @if (@Model.Movies.Count == 0)
+    {
+        <h3>Sorry there are no movies atm</h3>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var movie in @Model.Movies)
+                {
+                    <tr>
+                        <td><a href="#">@movie.Name</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        
+    }
+</div>
